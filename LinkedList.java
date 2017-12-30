@@ -8,7 +8,12 @@ public class LinkedList {
     }
 
     public LinkedList(int data) {
+	this(data, null);
+    }
+
+    public LinkedList (int data, LinkedList next) {
 	this.data = data;
+	this.next = next;
     }
 
     public LinkedList getNext() {
@@ -58,22 +63,42 @@ public class LinkedList {
 	}
 	LinkedList curr = head;
 	LinkedList prev = null;
+	LinkedList nd = new LinkedList();
 	if (curr != null) {
-
+	    curr = head.getNext();
+	    while (pos > 0) {
+		prev = curr;
+		curr = curr.getNext();
+		pos--;
+	    }
+	    if (prev != null) {
+		prev.setNext(nd);
+		nd.setNext(curr);
+	    }
 	} else {
+	    head = num;
 
 	}
 
 
     }
 
+    //    public LinkedList remove(int pos) {
+    //  }
+
+
+
+
+
     public void print() {
 	LinkedList curr = head;
-
+	if (curr == null) {
+	    System.out.println("null");
+	}
 	while (curr.getNext() != null) {
+	    System.out.println(curr.data);
 	    curr = curr.getNext();
 	}
-	System.out.println(curr);
     }
 
 }
