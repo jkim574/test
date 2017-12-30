@@ -8,7 +8,11 @@ public class LinkedList {
     }
 
     public LinkedList(int data) {
-	this(data, null);
+	this.data = data;
+    }
+
+    public LinkedList(LinkedList next) {
+	this.next = next;
     }
 
     public LinkedList (int data, LinkedList next) {
@@ -59,7 +63,7 @@ public class LinkedList {
     public void add(int pos, LinkedList num) {
 	int length = len();
 	if (pos > length || pos < 0) {
-	    System.out.println("wrong index");
+	    System.out.println("wrong position");
 	}
 	LinkedList curr = head;
 	LinkedList prev = null;
@@ -74,6 +78,9 @@ public class LinkedList {
 	    if (prev != null) {
 		prev.setNext(nd);
 		nd.setNext(curr);
+	    } else {
+		nd.setNext(head.getNext());
+		head.setNext(nd);
 	    }
 	} else {
 	    head = num;
@@ -83,7 +90,7 @@ public class LinkedList {
 
     }
 
-    //    public LinkedList remove(int pos) {
+    //      public LinkedList remove(int pos) {
     //  }
 
 
@@ -92,12 +99,10 @@ public class LinkedList {
 
     public void print() {
 	LinkedList curr = head;
-	if (curr == null) {
-	    System.out.println("null");
-	}
-	while (curr.getNext() != null) {
+       	while (curr.getNext() != null) {
 	    System.out.println(curr.data);
 	    curr = curr.getNext();
+
 	}
     }
 
