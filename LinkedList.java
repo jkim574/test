@@ -3,10 +3,12 @@ public class LinkedList {
     private LinkedList next;
     private LinkedList head;
 
-    public LinkedList(int data, LinkedList next, LinkedList head) {
+    public LinkedList() {
+	head = null;
+    }
+
+    public LinkedList(int data) {
 	this.data = data;
-	this.next = next;
-	this.head = head;
     }
 
     public LinkedList getNext() {
@@ -35,16 +37,16 @@ public class LinkedList {
 	return length;
     }
 
-    public void add(LinkedList data) {
-	LinkedList nd = new LinkedList(data);
+    public void add(LinkedList num) {
+	LinkedList nd = new LinkedList();
 	LinkedList curr = head;
 	if (curr != null) {
 	    while (curr.getNext() != null) {
 		curr = curr.getNext();
 	    }
-	    curr.setNext(data);
+	    curr.setNext(num);
 	} else {
-	    head = data;
+	    head = num;
 	}
 
 
