@@ -51,14 +51,29 @@ public class LinkedList {
 	}
     }
 
-    public String toString() {
-	String str = "";
+    public void add(int pos, LinkedList num) {
+	int length = len();
+	if (pos > length || pos < 0) {
+	    System.out.println("wrong index");
+	}
 	LinkedList curr = head;
+	LinkedList prev = null;
+	if (curr != null) {
+
+	} else {
+
+	}
+
+
+    }
+
+    public void print() {
+	LinkedList curr = head;
+
 	while (curr.getNext() != null) {
 	    curr = curr.getNext();
-	    str += curr;
 	}
-	return "List: " + str;
+	System.out.println(curr);
     }
 
 }

@@ -5,7 +5,7 @@ public class LinkedListTest {
 	list.add(new LinkedList(5));
 	list.add(new LinkedList(6));
 	list.add(new LinkedList(9));
-	System.out.println(list.len());
-	System.out.println(list.toString());
+	System.out.println("total length is " + list.len());
+        list.print();
     }
 }
