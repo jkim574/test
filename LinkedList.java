@@ -21,6 +21,7 @@ public class LinkedList {
 
     public void setNext(LinkedList next) {
 	this.next = next;
+
     }
 
     public void setData(int data) {
@@ -48,9 +49,16 @@ public class LinkedList {
 	} else {
 	    head = num;
 	}
-
-
     }
 
+    public String toString() {
+	String str = "";
+	LinkedList curr = head;
+	while (curr.getNext() != null) {
+	    curr = curr.getNext();
+	    str += curr;
+	}
+	return "List: " + str;
+    }
 
 }
