@@ -90,8 +90,15 @@ public class LinkedList {
 
     }
 
-    //      public LinkedList remove(int pos) {
-    //  }
+    public void remove_last() {
+	int length = 0;
+	LinkedList curr = head;
+	LinkedList prev = null;
+	if (curr != null) {
+	    curr = head.getNext();
+	    curr.setNext(null);
+	}
+    }
 
 
 
