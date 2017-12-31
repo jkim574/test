@@ -7,8 +7,10 @@ public class LinkedListTest {
 	list.add(new LinkedList(5));
 	list.add(new LinkedList(6));
 	list.add(new LinkedList(9));
-	//	list.add(2,new LinkedList(2));
+	list.remove_head();
+	//   	list.add(new LinkedList(2),2);
        	list.add(new LinkedList(3));
+	//	list.remove_last();
 	list.print();
 	System.out.println("total length is " + list.len());
     }

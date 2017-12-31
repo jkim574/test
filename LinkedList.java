@@ -60,56 +60,50 @@ public class LinkedList {
 	}
     }
 
-    public void add(int pos, LinkedList num) {
+    public void add(LinkedList num, int pos) {
 	int length = len();
+	int count = 0;
 	if (pos > length || pos < 0) {
 	    System.out.println("wrong position");
 	}
 	LinkedList curr = head;
-	LinkedList prev = null;
-	LinkedList nd = new LinkedList();
-	if (curr != null) {
-	    curr = head.getNext();
-	    while (pos > 0) {
-		prev = curr;
-		curr = curr.getNext();
-		pos--;
-	    }
-	    if (prev != null) {
-		prev.setNext(nd);
-		nd.setNext(curr);
-	    } else {
-		nd.setNext(head.getNext());
-		head.setNext(nd);
-	    }
-	} else {
-	    head = num;
-
+        if (pos == 0) {
+	    num.setNext(head);
+	    this.head = num;
 	}
 
+	while (curr != null) {
+	    count++;
+	    if (count == pos) {
+		break;
+	    }
+	    curr = curr.getNext();
+	}
+	LinkedList cpy = curr.getNext();
+	curr.setNext(num);
+	num.setNext(cpy);
 
     }
 
-    public void remove_last() {
-	int length = 0;
-	LinkedList curr = head;
-	LinkedList prev = null;
-	if (curr != null) {
-	    curr = head.getNext();
-	    curr.setNext(null);
+    public LinkedList remove_head() {
+	if (this.head == null) {
+	    return null;
 	}
+	this.head = head.getNext();
+	return head;
     }
+
+
 
 
 
 
 
     public void print() {
-	LinkedList curr = head;
+	LinkedList curr = this.head;
        	while (curr.getNext() != null) {
 	    System.out.println(curr.data);
 	    curr = curr.getNext();
-
 	}
     }
 
