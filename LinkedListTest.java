@@ -8,7 +8,7 @@ public class LinkedListTest {
 	list.add(new Node(6));
 	list.add(new Node(9));
 	list.remove_head();
-	//   	list.add(new LinkedList(2),2);
+
        	list.add(new Node(3));
 	//	list.remove_last();
 	list.print();
