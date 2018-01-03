@@ -28,11 +28,7 @@ public class LinkedList {
     }
 
     public void add(Node item, int pos) {
-	int length = len();
 	int count = 0;
-	if (pos > length || pos < 0) {
-	    System.out.println("wrong position");
-	}
         Node curr = head;
         if (pos == 0) {
 	    item.setNext(head);
@@ -52,6 +48,20 @@ public class LinkedList {
 
     }
 
+    public Node get(int pos) {
+	Node curr = head;
+	if (curr != null) {
+	    curr = curr.getNext();
+	    while (pos > 0) {
+		curr = curr.getNext();
+		pos--;
+	    }
+
+	    return curr.getData();
+	}
+	return null;
+    }
+
     public Node remove_head() {
 	if (this.head == null) {
 	    return null;
@@ -60,10 +70,24 @@ public class LinkedList {
 	return head;
     }
 
+    public void remove_tail() {
+	Node curr = this.head;
+	Node prev = null;
+	if (head == null) {
+	    return;
+	}
+	while (curr.getNext() != null) {
+	    prev = curr;
+	    curr = curr.getNext();
+	}
+	prev.setNext(null);
+
+
+    }
 
     public void print() {
         Node curr = this.head;
-       	while (curr.getNext() != null) {
+       	while (curr != null) {
 	    System.out.println(curr.getData());
 	    curr = curr.getNext();
 	}

@@ -8,10 +8,10 @@ public class LinkedListTest {
 	list.add(new Node(6));
 	list.add(new Node(9));
 	list.remove_head();
-
-       	list.add(new Node(3));
-	//	list.remove_last();
+	list.add(new Node(3));
+	list.remove_tail();
 	list.print();
+	list.get(3);
 	System.out.println("total length is " + list.len());
     }
 }
