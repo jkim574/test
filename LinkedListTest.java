@@ -1,17 +1,17 @@
 public class LinkedListTest {
     public static void main(String[] args) {
-	LinkedList list = new LinkedList();
+	LinkedList<Integer> list = new LinkedList<Integer>();
 
 
-	list.add(new Node(15));
-	list.add(new Node(5));
-	list.add(new Node(6));
-	list.add(new Node(9));
-	list.remove_head();
-	list.add(new Node(3));
-	list.remove_tail();
-	list.print();
-	list.get(3);
+	list.add(3);
+	list.add(5);
+	list.add(7);
+	list.add(9);
+	list.add(3,2);
+	//   list.remove_head();
+	//        list.remove_tail();
+        list.print();
+	//	list.get(3);
 	System.out.println("total length is " + list.len());
     }
 }
